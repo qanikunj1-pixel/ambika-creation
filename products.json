@@ -46,23 +46,5 @@
     "category": "bracelets",
     "price": "2199",
     "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&h=400&fit=crop"
-  },
-  {
-    "name": "Test",
-    "category": "rings",
-    "price": "5001",
-    "image": "https://media.istockphoto.com/id/154956296/photo/gold-ring.jpg?s=2048x2048&w=is&k=20&c=zFri2Lp_Jl90Izxlr9WqyNmrXLho7EZEE8E_sl39yNg="
-  },
-  {
-    "name": "Hello",
-    "category": "rings",
-    "price": "5555",
-    "image": "https://www.shutterstock.com/image-generated/ultrahighresolution-editorial-jewelry-photoshoot-elegant-female-2665581637?trackingId=e671d87d-63d4-4b3d-a2ac-87ec506db3fa"
-  },
-  {
-    "name": "Neckless",
-    "category": "necklaces",
-    "price": "5050",
-    "image": "https://cdn.pixabay.com/photo/2016/02/02/15/55/jewellery-1175535_1280.jpg"
   }
 ]
