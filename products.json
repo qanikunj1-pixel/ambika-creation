@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Diamond Solitaire Ring",
+    "category": "rings",
+    "price": "2499",
+    "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop"
+  },
+  {
+    "name": "Pearl Strand Necklace",
+    "category": "necklaces",
+    "price": "1899",
+    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop"
+  },
+  {
+    "name": "Gold Drop Earrings",
+    "category": "earrings",
+    "price": "899",
+    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop"
+  },
+  {
+    "name": "Diamond Tennis Bracelet",
+    "category": "bracelets",
+    "price": "3299",
+    "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop"
+  },
+  {
+    "name": "Emerald Halo Ring",
+    "category": "rings",
+    "price": "3799",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=400&fit=crop"
+  },
+  {
+    "name": "Gold Chain Necklace",
+    "category": "necklaces",
+    "price": "1299",
+    "image": "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&h=400&fit=crop"
+  },
+  {
+    "name": "Diamond Stud Earrings",
+    "category": "earrings",
+    "price": "1599",
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=400&h=400&fit=crop"
+  },
+  {
+    "name": "Gold Bangle Set",
+    "category": "bracelets",
+    "price": "2199",
+    "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&h=400&fit=crop"
+  }
+]

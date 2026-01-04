@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambika Creations - Exquisite Collections</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>✨ Ambika Creations</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Collections</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Discover Timeless Elegance</h2>
+            <p>Handcrafted jewelry pieces that tell your unique story</p>
+            <a href="#products" class="cta-button">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Collections</h2>
+                <p>Exquisite pieces crafted with passion and precision</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="rings">Rings</button>
+                <button class="filter-btn" data-filter="necklaces">Necklaces</button>
+                <button class="filter-btn" data-filter="earrings">Earrings</button>
+                <button class="filter-btn" data-filter="bracelets">Bracelets</button>
+                <button class="add-product-btn" id="addProductBtn">+ Add New Product</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Products will be loaded dynamically from products.json -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Crafted With Love</h2>
+                    <p>For over 25 years, Ambika Creations has been creating timeless jewelry pieces that celebrate life's precious moments. Each piece is meticulously handcrafted by our skilled artisans using the finest materials.</p>
+                    <p>Our commitment to quality and elegance ensures that every piece of jewelry tells a unique story and becomes a cherished heirloom.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon">💎</div>
+                        <h3>Premium Quality</h3>
+                        <p>Certified diamonds and precious stones</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✋</div>
+                        <h3>Handcrafted</h3>
+                        <p>Every piece crafted with care</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🎁</div>
+                        <h3>Lifetime Warranty</h3>
+                        <p>Guaranteed quality and service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Visit our showroom or contact us for personalized service</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>123 Jewelry Lane, Diamond District<br>New York, NY 10001</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p>info@ambikacreations.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ambika Creations. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Buy Now Modal -->
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Complete Your Purchase</h2>
+            <div class="modal-product-info">
+                <p><strong>Product:</strong> <span id="modal-product-name"></span></p>
+                <p><strong>Price:</strong> <span id="modal-product-price"></span></p>
+            </div>
+            <form id="buyForm">
+                <div class="form-group">
+                    <label for="customerName">Full Name *</label>
+                    <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="customerContact">Contact Number *</label>
+                    <input type="tel" id="customerContact" name="customerContact" required placeholder="Enter your contact number" pattern="[0-9]{10}">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Submit Order</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close-add-modal">&times;</span>
+            <h2>Add New Product</h2>
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label for="productName">Product Name *</label>
+                    <input type="text" id="productName" name="productName" required placeholder="e.g., Diamond Ring">
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Category *</label>
+                    <select id="productCategory" name="productCategory" required>
+                        <option value="">Select category</option>
+                        <option value="rings">Rings</option>
+                        <option value="necklaces">Necklaces</option>
+                        <option value="earrings">Earrings</option>
+                        <option value="bracelets">Bracelets</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price (₹) *</label>
+                    <input type="number" id="productPrice" name="productPrice" required placeholder="e.g., 2499" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Image URL *</label>
+                    <input type="url" id="productImage" name="productImage" required placeholder="https://example.com/image.jpg">
+                    <small>Enter a direct link to the product image</small>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Add Product</button>
+                    <button type="button" class="cancel-add-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- GitHub Configuration Modal -->
+    <div id="githubConfigModal" class="modal">
+        <div class="modal-content">
+            <span class="close-github-config">&times;</span>
+            <h2>GitHub Configuration</h2>
+            <p style="color: #666; margin-bottom: 1.5rem;">Configure GitHub integration to automatically save products for all users.</p>
+            <form id="githubConfigForm">
+                <div class="form-group">
+                    <label for="githubUsername">GitHub Username *</label>
+                    <input type="text" id="githubUsername" name="githubUsername" required placeholder="Your GitHub username">
+                </div>
+                <div class="form-group">
+                    <label for="githubRepo">Repository Name *</label>
+                    <input type="text" id="githubRepo" name="githubRepo" required placeholder="e.g., ambika-creations">
+                </div>
+                <div class="form-group">
+                    <label for="githubToken">Personal Access Token *</label>
+                    <input type="password" id="githubToken" name="githubToken" required placeholder="ghp_...">
+                    <small>Create a token at GitHub → Settings → Developer settings → Personal access tokens</small>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Save Configuration</button>
+                    <button type="button" class="cancel-github-config">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-quick-view">&times;</span>
+            <div class="quick-view-container">
+                <div class="quick-view-image">
+                    <img id="quickViewImage" src="" alt="Product">
+                </div>
+                <div class="quick-view-details">
+                    <h2 id="quickViewName"></h2>
+                    <p class="quick-view-category" id="quickViewCategory"></p>
+                    <p class="quick-view-price" id="quickViewPrice"></p>
+                    <button class="buy-now-btn" id="quickViewBuyBtn">Buy Now</button>
+                    <div class="product-description">
+                        <h3>Product Details</h3>
+                        <ul>
+                            <li>Premium quality materials</li>
+                            <li>Handcrafted with care</li>
+                            <li>Lifetime warranty included</li>
+                            <li>Certificate of authenticity</li>
+                            <li>Free gift packaging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
