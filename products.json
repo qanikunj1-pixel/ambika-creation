@@ -70,5 +70,11 @@
     "category": "earrings",
     "price": "555",
     "image": "https://khushmag.com/Images/ExtraImages/8.-Celebrity-in-Anayah-jewellery.jpg"
+  },
+  {
+    "name": "r5",
+    "category": "bracelets",
+    "price": "565",
+    "image": "https://khushmag.com/Images/ExtraImages/8.-Celebrity-in-Anayah-jewellery.jpg"
   }
 ]
