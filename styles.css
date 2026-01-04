@@ -513,6 +513,72 @@ footer .container {
     display: none !important;
 }
 
+/* Pagination Styles */
+.pagination-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-btn {
+    padding: 10px 16px;
+    border: 2px solid var(--primary-color);
+    background: var(--white);
+    color: var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    min-width: 44px;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.page-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: #ccc;
+    color: #999;
+}
+
+.page-dots {
+    padding: 0 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .page-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        min-width: 38px;
+    }
+    
+    .pagination {
+        gap: 0.3rem;
+    }
+}
+
 /* Modal Styles */
 .modal {
     display: none;
