@@ -1,6 +1,5 @@
 // Filter functionality
 const filterButtons = document.querySelectorAll('.filter-btn');
-const productCards = document.querySelectorAll('.product-card');
 
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -12,6 +11,9 @@ filterButtons.forEach(button => {
         
         // Get filter value
         const filterValue = button.getAttribute('data-filter');
+        
+        // Query product cards dynamically (they are loaded from JSON)
+        const productCards = document.querySelectorAll('.product-card');
         
         // Filter products
         productCards.forEach(card => {
