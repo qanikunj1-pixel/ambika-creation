@@ -52,5 +52,11 @@
     "category": "rings",
     "price": "5000",
     "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop"
+  },
+  {
+    "name": "Rin1",
+    "category": "necklaces",
+    "price": "4444",
+    "image": "https://khushmag.com/Images/ExtraImages/8.-Celebrity-in-Anayah-jewellery.jpg"
   }
 ]
