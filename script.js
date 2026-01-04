@@ -303,14 +303,11 @@ async function saveProductToGitHub(productData) {
     
     try {
         // Get current products.json from GitHub
-        const timestamp = new Date().getTime();
-        const getUrl = `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/products.json?ref=main&t=${timestamp}`;
+        const getUrl = `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/products.json`;
         const getResponse = await fetch(getUrl, {
-            cache: 'no-store',
             headers: {
                 'Authorization': `token ${githubConfig.token}`,
-                'Accept': 'application/vnd.github.v3+json',
-                'Cache-Control': 'no-cache'
+                'Accept': 'application/vnd.github.v3+json'
             }
         });
         
