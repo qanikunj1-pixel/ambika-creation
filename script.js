@@ -301,11 +301,14 @@ async function saveProductToGitHub(productData) {
     
     try {
         // Get current products.json from GitHub
-        const getUrl = `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/products.json`;
+        const timestamp = new Date().getTime();
+        const getUrl = `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/products.json?ref=main&t=${timestamp}`;
         const getResponse = await fetch(getUrl, {
+            cache: 'no-store',
             headers: {
                 'Authorization': `token ${githubConfig.token}`,
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github.v3+json',
+                'Cache-Control': 'no-cache'
             }
         });
         
@@ -468,7 +471,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // Function to load products from products.json
 async function loadProductsFromJSON() {
     try {
-        const response = await fetch('products.json');
+        // Add cache-busting parameter to ensure fresh data
+        const timestamp = new Date().getTime();
+        const response = await fetch(`products.json?v=${timestamp}`, {
+            cache: 'no-store',
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+            }
+        });
         const products = await response.json();
         
         products.forEach(product => {
