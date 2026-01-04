@@ -276,16 +276,13 @@ addProductForm.addEventListener('submit', async (e) => {
     const saved = await saveProductToGitHub(productData);
     
     if (saved) {
-        // Add to products arrays
-        allProducts.push(productData);
-        filteredProducts.push(productData);
-        
-        // Re-render products and pagination
-        renderProducts();
-        renderPagination();
-        
-        // Close modal and show success message
+        // Close modal first
         closeAddProductModal();
+        
+        // Reload products from JSON to sync with GitHub
+        await loadProductsFromJSON();
+        
+        // Show success message
         alert(`Product "${productName}" has been added successfully and saved to GitHub!`);
     } else {
         alert('Failed to save product to GitHub. Please check your GitHub configuration.');
@@ -318,7 +315,10 @@ async function saveProductToGitHub(productData) {
         });
         
         if (!getResponse.ok) {
-            throw new Error('Failed to fetch products.json from GitHub');
+            const errorData = await getResponse.json().catch(() => ({}));
+            console.error('GitHub fetch error:', errorData);
+            alert(`GitHub Error: ${errorData.message || 'Failed to fetch products.json'}. Check your repository settings.`);
+            return false;
         }
         
         const fileData = await getResponse.json();
@@ -344,12 +344,16 @@ async function saveProductToGitHub(productData) {
         });
         
         if (!updateResponse.ok) {
-            throw new Error('Failed to update products.json on GitHub');
+            const errorData = await updateResponse.json().catch(() => ({}));
+            console.error('GitHub update error:', errorData);
+            alert(`GitHub Error: ${errorData.message || 'Failed to update products.json'}. Check your token permissions.`);
+            return false;
         }
         
         return true;
     } catch (error) {
         console.error('GitHub save error:', error);
+        alert(`Error: ${error.message}. Please check your GitHub configuration and internet connection.`);
         return false;
     }
 }
